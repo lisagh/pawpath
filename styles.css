@@ -1002,12 +1002,13 @@ section {
   position: relative;
   min-height: 220px;
   padding: clamp(1.15rem, 2.4vw, 1.55rem);
-  border: 1px solid rgba(47, 76, 85, 0.1);
+  border: 1px solid rgba(47, 76, 85, 0.12);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(228, 241, 246, 0.5), rgba(255, 253, 245, 0) 54%),
+    radial-gradient(circle at 82% 10%, rgba(245, 179, 54, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(255, 251, 234, 0.92), rgba(255, 253, 245, 0.46) 62%),
     #ffffff;
-  box-shadow: 0 18px 44px rgba(33, 54, 60, 0.08);
+  box-shadow: 0 18px 44px rgba(97, 72, 30, 0.08);
 }
 
 .team-avatar {
@@ -1015,12 +1016,24 @@ section {
   place-items: center;
   width: 4rem;
   height: 4rem;
-  border: 1px solid rgba(47, 76, 85, 0.12);
+  border: 1px solid rgba(47, 76, 85, 0.1);
   border-radius: 999px;
   color: #2f4c55;
-  background: #e4f1f6;
+  background: #fff1bf;
   font-size: 1.1rem;
   font-weight: 800;
+}
+
+.team-card:nth-child(2) .team-avatar {
+  background: #ffe2cf;
+}
+
+.team-card:nth-child(3) .team-avatar {
+  background: #ffe7a8;
+}
+
+.team-card:nth-child(4) .team-avatar {
+  background: #fff6d8;
 }
 
 .team-card h3 {
