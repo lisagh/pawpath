@@ -372,9 +372,9 @@ section {
 
 @media (max-width: 639px) {
   .hero-shell {
-    --hero-mobile-height: clamp(660px, 86svh, 740px);
-    --hero-mobile-art-top: clamp(274px, 72vw, 318px);
-    --hero-mobile-art-size: min(138vw, 540px);
+    --hero-mobile-height: clamp(700px, 92svh, 780px);
+    --hero-mobile-art-top: clamp(350px, 91vw, 408px);
+    --hero-mobile-art-size: min(121vw, 472px);
     width: 100%;
     border-radius: 0;
   }
@@ -382,7 +382,7 @@ section {
   .hero-inner {
     min-height: var(--hero-mobile-height);
     padding-top: clamp(7.25rem, 27vw, 8.5rem);
-    padding-bottom: clamp(2.5rem, 12vw, 4rem);
+    padding-bottom: clamp(2rem, 10vw, 3.5rem);
     align-content: start;
   }
 
@@ -467,6 +467,48 @@ section {
     font-size: clamp(1rem, 4.1vw, 1.12rem);
     line-height: 1.38;
   }
+}
+
+.question-quote {
+  position: relative;
+  display: grid;
+  gap: 0.72rem;
+  margin-top: 1.45rem;
+  padding: clamp(1.15rem, 3vw, 1.45rem);
+  border: 1px solid rgba(47, 76, 85, 0.1);
+  border-radius: 8px;
+  background: #fffdf5;
+  box-shadow: 0 18px 44px rgba(33, 54, 60, 0.08);
+}
+
+.question-quote::before {
+  position: absolute;
+  top: -0.72rem;
+  left: clamp(1rem, 4vw, 1.4rem);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #2f4c55;
+  content: "?";
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.question-quote p {
+  margin: 0;
+  color: #172126;
+  font-size: clamp(1rem, 2vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.question-quote p::before {
+  color: #63b9c9;
+  content: "— ";
 }
 
 @media (min-width: 640px) and (max-width: 1199px) {
@@ -777,10 +819,10 @@ section {
   overflow: visible;
   fill: none;
   stroke: #f2a414;
-  stroke-width: 7;
-  stroke-dasharray: 1 22;
+  stroke-width: 6;
+  stroke-dasharray: 1 24;
   stroke-linecap: round;
-  opacity: 0.95;
+  opacity: 0.82;
 }
 
 .system-top-row,
@@ -931,6 +973,72 @@ section {
   max-width: 12ch;
 }
 
+.team-section {
+  overflow: hidden;
+}
+
+.team-heading {
+  max-width: 720px;
+  margin: 0 auto clamp(2rem, 5vw, 3.75rem);
+  text-align: center;
+}
+
+.team-heading p {
+  margin-top: 1.2rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #172126;
+  font-size: clamp(15.377px, calc(14.02px + 0.347vw), 19.024px);
+  font-weight: 400;
+  line-height: clamp(22.296px, calc(19.27px + 0.776vw), 30.439px);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.team-card {
+  position: relative;
+  min-height: 220px;
+  padding: clamp(1.15rem, 2.4vw, 1.55rem);
+  border: 1px solid rgba(47, 76, 85, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(228, 241, 246, 0.5), rgba(255, 253, 245, 0) 54%),
+    #ffffff;
+  box-shadow: 0 18px 44px rgba(33, 54, 60, 0.08);
+}
+
+.team-avatar {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid rgba(47, 76, 85, 0.12);
+  border-radius: 999px;
+  color: #2f4c55;
+  background: #e4f1f6;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.team-card h3 {
+  margin: 2.35rem 0 0;
+  color: #172126;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.team-card p {
+  margin: 0.55rem 0 0;
+  color: #64716e;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
 @media (min-width: 768px) {
   .system-top-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1029,16 +1137,19 @@ section {
   }
 
   .system-flow-inner {
-    min-height: 1640px;
+    min-height: 1900px;
   }
 
   .system-path {
-    top: 182px;
-    left: 43%;
-    width: 118%;
-    height: 1250px;
-    transform: translateX(-50%) rotate(8deg);
+    top: 246px;
+    left: 50%;
+    width: min(72vw, 260px);
+    height: 1460px;
+    transform: translateX(-50%);
     transform-origin: 50% 0;
+    stroke-width: 5;
+    stroke-dasharray: 1 28;
+    opacity: 0.52;
   }
 
   .system-intro {
@@ -1047,15 +1158,19 @@ section {
 
   .system-top-row,
   .system-story-row {
-    gap: 22px;
+    gap: 30px;
   }
 
   .system-top-row {
-    margin-top: 56px;
+    margin-top: 76px;
+  }
+
+  .system-top-row .system-screen + .system-screen {
+    margin-top: 10px;
   }
 
   .system-story-row {
-    margin-top: 72px;
+    margin-top: 122px;
   }
 
   .system-screen {
@@ -1068,19 +1183,36 @@ section {
     width: min(100%, 330px);
     margin-right: auto;
     margin-left: auto;
-    background: rgba(255, 255, 255, 0.94);
+    padding: 0.2rem 0.65rem 0.35rem;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 0 0 18px #ffffff;
+    text-align: center;
+  }
+
+  .system-copy .story-title {
+    max-width: 11ch;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .system-copy p {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .flow-paw-one {
-    top: 510px;
-    right: 4%;
-    transform: rotate(18deg) scale(0.72);
+    top: 610px;
+    right: 8%;
+    transform: rotate(17deg) scale(0.5);
+    opacity: 0.72;
   }
 
   .flow-paw-two {
-    top: 1040px;
-    left: 4%;
-    transform: rotate(-22deg) scale(0.64);
+    top: 1268px;
+    left: 9%;
+    transform: rotate(-18deg) scale(0.46);
+    opacity: 0.62;
   }
 
   .guidance-story .system-copy {
@@ -1119,6 +1251,43 @@ section {
 
   .promise-copy .story-title {
     max-width: 13ch;
+  }
+
+  .team-heading {
+    max-width: 20rem;
+    text-align: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .team-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.9rem;
+    align-items: center;
+    min-height: 0;
+    padding: 0.9rem;
+    box-shadow: 0 12px 30px rgba(33, 54, 60, 0.06);
+  }
+
+  .team-avatar {
+    grid-row: span 2;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
+
+  .team-card h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .team-card p {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
   }
 }
 
