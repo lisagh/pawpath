@@ -172,14 +172,6 @@ section {
   }
 }
 
-.problem-title,
-.platform-title,
-.story-title {
-  font-family: "Ramsina", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
 .award-badge {
   display: inline-flex;
   align-items: center;
@@ -227,20 +219,41 @@ section {
   letter-spacing: 0;
 }
 
+.problem-title,
+.platform-title,
+.story-title {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.problem-copy p,
+.platform-copy p,
+.system-copy p,
+.app-heading p,
+.promise-copy p {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #172126;
+  font-size: clamp(15.377px, calc(14.02px + 0.347vw), 19.024px);
+  font-weight: 400;
+  line-height: clamp(22.296px, calc(19.27px + 0.776vw), 30.439px);
+  letter-spacing: 0;
+}
+
 .problem-title {
-  font-size: clamp(2rem, 6.2vw, 2.82rem);
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+  line-height: 1.08;
 }
 
 .platform-title {
-  max-width: 13ch;
-  font-size: clamp(2.1rem, 6.4vw, 3rem);
-  line-height: 1.12;
+  max-width: 12ch;
+  font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+  line-height: 1.08;
 }
 
 .story-title {
-  font-size: clamp(2rem, 5.4vw, 3rem);
-  line-height: 1.14;
+  font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+  line-height: 1.08;
 }
 
 .hero-shell {
@@ -758,7 +771,16 @@ section {
 }
 
 .system-path {
-  display: none;
+  position: absolute;
+  z-index: 0;
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: #f2a414;
+  stroke-width: 7;
+  stroke-dasharray: 1 22;
+  stroke-linecap: round;
+  opacity: 0.95;
 }
 
 .system-top-row,
@@ -813,14 +835,17 @@ section {
 .app-heading p,
 .promise-copy p {
   margin-top: 1.6rem;
-  color: #555c5b;
-  font-size: clamp(1rem, 1.55vw, 1.18rem);
-  font-weight: 600;
-  line-height: 1.45;
 }
 
 .flow-paw {
-  display: none;
+  position: absolute;
+  z-index: 0;
+  display: block;
+  width: 54px;
+  height: auto;
+  fill: #ffaa00;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .app-story-section {
@@ -926,20 +951,10 @@ section {
   }
 
   .system-path {
-    position: absolute;
     top: 350px;
     left: 8%;
-    z-index: 0;
-    display: block;
     width: 84%;
     height: 1120px;
-    overflow: visible;
-    fill: none;
-    stroke: #f2a414;
-    stroke-width: 7;
-    stroke-dasharray: 1 22;
-    stroke-linecap: round;
-    opacity: 0.95;
   }
 
   .system-top-row {
@@ -974,13 +989,7 @@ section {
   }
 
   .flow-paw {
-    position: absolute;
-    z-index: 0;
-    display: block;
     width: 62px;
-    height: auto;
-    fill: #ffaa00;
-    opacity: 0.95;
     transform: rotate(18deg);
   }
 
@@ -1017,6 +1026,61 @@ section {
   .promise-inner {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .system-flow-inner {
+    min-height: 1640px;
+  }
+
+  .system-path {
+    top: 182px;
+    left: 43%;
+    width: 118%;
+    height: 1250px;
+    transform: translateX(-50%) rotate(8deg);
+    transform-origin: 50% 0;
+  }
+
+  .system-intro {
+    max-width: 21rem;
+  }
+
+  .system-top-row,
+  .system-story-row {
+    gap: 22px;
+  }
+
+  .system-top-row {
+    margin-top: 56px;
+  }
+
+  .system-story-row {
+    margin-top: 72px;
+  }
+
+  .system-screen {
+    width: min(100%, 330px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .system-copy {
+    width: min(100%, 330px);
+    margin-right: auto;
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .flow-paw-one {
+    top: 510px;
+    right: 4%;
+    transform: rotate(18deg) scale(0.72);
+  }
+
+  .flow-paw-two {
+    top: 1040px;
+    left: 4%;
+    transform: rotate(-22deg) scale(0.64);
   }
 
   .guidance-story .system-copy {
@@ -1059,15 +1123,20 @@ section {
 }
 
 @media (max-width: 480px) {
+  .problem-title,
+  .platform-title,
   .story-title {
-    font-size: clamp(1.9rem, 9vw, 2.4rem);
+    font-size: clamp(2.45rem, 11.5vw, 3.25rem);
+    line-height: 1.08;
   }
 
+  .problem-copy p,
+  .platform-copy p,
   .system-copy p,
   .app-heading p,
   .promise-copy p {
-    font-size: 0.98rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.52;
   }
 }
 
