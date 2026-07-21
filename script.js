@@ -57,7 +57,9 @@ if (!motionQuery.matches) {
         ".promise-section .promise-pet",
         ".promise-section .promise-copy",
         "#team .team-heading",
-        "#team .team-card"
+        "#team .team-card",
+        ".site-footer .footer-panel",
+        ".site-footer .footer-bottom"
       ].join(",")
     )
   ].filter(Boolean);
